@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Arcturus Care | </title>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link href="../../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <!-- <link href="../vendors/nprogress/nprogress.css" rel="stylesheet"> -->
+    <!-- <!-- iCheck --> 
+    <!-- <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet"> -->
+	
+    <!-- bootstrap-progressbar -->
+    <!--<link href="../../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">-->
+    <!-- JQVMap -->
+    <!-- <link href="../../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/> -->
+    <!-- <!-- bootstrap-daterangepicker -->
+    <!-- <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"> -->
+
+    <!-- Custom Theme Style -->
+    <link href="../../build/css/custom.min.css" rel="stylesheet">
+	<link href="../../build/css/style.css" rel="stylesheet">
+
+
+      <script src="../assets/js/jquery/jquery-1.8.3.min.js"></script>
+
+
+      <script  src="../assets/js/Angularjs/angular.min.js"></script>
+      <script src="../assets/js/Angularjs/angular-cookies.min.js"></script>
+      <script src="../assets/js/Angularjs/angular-ui-router.min.js"></script>
+
+
+
+      <script src="../assets/js/app.js"></script>
+      <!-- <script src="../assets/js/routes.js"></script> -->
+      <script src="../app/components/Patients/addPatientsCtr.js"></script>
+      <script src="../app/components/Patients/addPatientsService.js"></script>
+
+      <script src="../app/components/Profile/ViewprofileCtr.js"></script>
+      <script src="../app/components/Profile/ViewProfileService.js"></script>
+
+      <script src="../app/components/PatientProfile/viewPatientProfileCtr.js"></script>
+      <script src="../app/components/PatientProfile/viewPatientProfileService.js"></script>
+
+      <script src="../app/components/caretaker/careTakerCtr.js"></script>
+      <script src="../app/components/caretaker/careTakerService.js"></script>
+
+      <script src="../app/components/editProfile/editProfileCtr.js"></script>
+
+  </head>
+
+  <body class="nav-md" ng-app="MyApp">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;background-color:#0484CF;">
+              <a href="#" class="site_title"><img src="../assets/images/icc.png" alt="..."width="30" > <span>Arcturus Care</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="../assets/images/modify.png" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>Admin</h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3></h3>
+                <ul class="nav side-menu">
+                  <li><a ui-sref="#"><i class="fa fa-home"></i> Home</a>
+                    <ul class="nav child_menu">
+                      <!-- <li><a href="../index.html">Dashboard</a></li> -->
+                      
+                    </ul>
+                  </li>
+                  <li>
+                    
+                      <li><a ui-sref="Addpatient"><i class="fa fa-user-plus" style="font-size:15px;"></i>Add Patient</a></li>
+                      <li><a ui-sref="ViewProfile"><i class="fa fa-user" style="font-size:15px;"></i>View Patients</a></li>
+                      <!-- <li><a href="contacts.html"><i class="fa fa-bell" style="font-size:15px;"></i>Notifications</a></li> -->
+                      <li><a ui-sref="careTaker"><i class="fa fa-user-plus" style="font-size:15px;"></i>Add Family Member</a></li>
+					  <li><a ui-sref="help"><i class="fa fa-info-circle" style="font-size:15px;"></i>Help</a></li>
+                    
+                  </li>
+				  
+                
+				  
+                </ul>
+              </div>
+              <div class="menu_section">
+                
+                <ul class="nav side-menu">
+                 
+                  </li>                  
+                  <!-- <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li> -->
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <!-- <a data-toggle="tooltip" data-placement="top" title="Settings"> -->
+                <!-- <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> -->
+              <!-- </a> -->
+              <!-- <a data-toggle="tooltip" data-placement="top" title="FullScreen"> -->
+                <!-- <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> -->
+              <!-- </a> -->
+              <!-- <a data-toggle="tooltip" data-placement="top" title="Lock"> -->
+                <!-- <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> -->
+              <!-- </a> -->
+              <!-- <a data-toggle="tooltip" data-placement="top" title="Logout" href="../index.html"> -->
+                <!-- <span class="glyphicon glyphicon-off" aria-hidden="true"></span> -->
+              <!-- </a> -->
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars" style="color:white;"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img src="../assets/images/user.png" alt="">Admin
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <!-- <li><a href="javascript:;"> Profile</a></li> -->
+                    <!-- <li> -->
+                      <!-- <a href="javascript:;"> -->
+                        <!-- <span class="badge bg-red pull-right">50%</span> -->
+                        <!-- <span>Settings</span> -->
+                      <!-- </a> -->
+                    <!-- </li> -->
+                    <!-- <li><a href="javascript:;">Help</a></li> -->
+                    <li><a href="../../index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+           
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col padding" role="main">
+          <!-- top tiles -->
+          
+          <!-- /top tiles -->
+
+     
+          <br />
+		  
+ <div ui-view style="padding-left:10%;"></div>
+          
+        <!-- /page content -->
+
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <!-- <script src="../../vendors/fastclick/lib/fastclick.js"></script> -->
+    <!-- <!-- NProgress --> 
+    <!-- <script src="../vendors/nprogress/nprogress.js"></script> -->
+    <!-- Chart.js -->
+    <!-- <script src="../vendors/Chart.js/dist/Chart.min.js"></script> -->
+    <!-- gauge.js -->
+    <!-- <script src="../vendors/gauge.js/dist/gauge.min.js"></script> -->
+    <!-- bootstrap-progressbar -->
+    <!-- <script src="../../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script> -->
+    <!-- <!-- iCheck --> 
+    <!-- <script src="../vendors/iCheck/icheck.min.js"></script> -->
+    <!-- Skycons -->
+    <!-- <script src="../../vendors/skycons/skycons.js"></script> -->
+    <!-- Flot -->
+    <!-- <script src="../vendors/Flot/jquery.flot.js"></script> -->
+    <!-- <script src="../vendors/Flot/jquery.flot.pie.js"></script> -->
+    <!-- <script src="../vendors/Flot/jquery.flot.time.js"></script> -->
+    <!-- <script src="../vendors/Flot/jquery.flot.stack.js"></script> -->
+    <!-- <script src="../vendors/Flot/jquery.flot.resize.js"></script> -->
+    <!-- Flot plugins -->
+    <!-- <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script> -->
+    <!-- <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script> -->
+    <!-- <script src="../vendors/flot.curvedlines/curvedLines.js"></script> -->
+    <!-- DateJS -->
+    <!-- <script src="../vendors/DateJS/build/date.js"></script> -->
+    <!-- <!-- <!-- JQVMap -->  
+    <!-- <script src="../../vendors/jqvmap/dist/jquery.vmap.js"></script> -->
+    <!-- <script src="../../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script> -->
+    <!-- <script src="../../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script> -->
+    <!-- <!-- bootstrap-daterangepicker -->
+    <!-- <script src="../../vendors/moment/min/moment.min.js"></script> -->
+    <!-- <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script> -->
+
+    <!-- Custom Theme Scripts -->
+    <script src="../../build/js/custom.min.js"></script>
+    </div>
+  </body>
+</html>

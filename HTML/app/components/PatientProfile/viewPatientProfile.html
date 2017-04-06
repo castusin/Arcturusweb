@@ -1,0 +1,234 @@
+<div class="" role="main">
+<div class="">
+<div class="page-title">
+    <div class="title_left">
+        <h3 style="color:#1B3A8D;">Patient Profile</h3>
+    </div>
+
+  
+</div>
+
+
+
+<div class="row">
+<div class="col-md-12 col-sm-12 col-xs-12">
+<div class="x_pane12">
+<div class="x_title">
+    <h2></h2>
+    <ul class="nav navbar-right panel_toolbox">
+        
+    </ul>
+    
+</div>
+<div class="x_content">
+    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+        <div class="profile_img">
+            <div id="crop-avatar">
+                <!-- Current avatar -->
+                <img class="img-responsive avatar-view" src="../assets/images/vpp_img.png" alt="Avatar" title="Change the avatar">
+            </div>
+        </div>
+		<div style="padding-left:40%;">
+        <h3 style="color:#1B3A8D;"> {{patient.firstName}}</h3>
+		</div>
+
+        <!-- <ul class="list-unstyled user_data"> -->
+        <!-- <li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA -->
+        <!-- </li> -->
+
+        <!-- <li> -->
+        <!-- <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer -->
+        <!-- </li> -->
+
+        <!-- <li class="m-top-xs"> -->
+        <!-- <i class="fa fa-external-link user-profile-icon"></i> -->
+        <!-- <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a> -->
+        <!-- </li> -->
+        <!-- </ul> -->
+		
+		
+		<!--<edit call start>-->
+		
+
+        <!-- <input type="submit" value="Edit profile" class="btn btn-success add" ng-click="edit()"> -->
+        
+		<!--<edit call end>-->
+		
+		
+		
+		<br />
+
+        <!-- start skills -->
+        <!-- <h4>Skills</h4> -->
+        <!-- <ul class="list-unstyled user_data"> -->
+        <!-- <li> -->
+        <!-- <p>Web Applications</p> -->
+        <!-- <div class="progress progress_sm"> -->
+        <!-- <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div> -->
+        <!-- </div> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!-- <p>Website Design</p> -->
+        <!-- <div class="progress progress_sm"> -->
+        <!-- <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="70"></div> -->
+        <!-- </div> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!-- <p>Automation & Testing</p> -->
+        <!-- <div class="progress progress_sm"> -->
+        <!-- <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30"></div> -->
+        <!-- </div> -->
+        <!-- </li> -->
+        <!-- <li> -->
+        <!-- <p>UI / UX</p> -->
+        <!-- <div class="progress progress_sm"> -->
+        <!-- <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div> -->
+        <!-- </div> -->
+        <!-- </li> -->
+        <!-- </ul> -->
+        <!-- end of skills -->
+
+    </div>
+    <div class="col-md-9 col-sm-9 col-xs-12">
+
+        <!-- <div class="profile_title"> -->
+        <!-- <div class="col-md-6"> -->
+        <!-- <h2>User Activity Report</h2> -->
+        <!-- </div> -->
+        <!-- <div class="col-md-6"> -->
+        <!-- <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED"> -->
+        <!-- <i class="glyphicon glyphicon-calendar fa fa-calendar"></i> -->
+        <!-- <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+        <!-- start of user-activity-graph -->
+
+        <!-- end of user-activity-graph -->
+
+        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+            <div class="x_content" >
+                <br />
+
+
+
+                <form id="demo-form2" name="viewPatientProfileForm" data-parsley-validate class="form-horizontal form-label-left" >
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Phone Number <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="first-name" required="required" name="PhoneNumbertxt" class="form-control col-md-7 col-xs-12" ng-model="patient.phoneNumber" numbers-only ng-readonly="phoneNumberTF" style="background-color:#EEF9FF;">
+                                <span ng-show="viewPatientProfileForm.PhoneNumbertxt.$dirty && viewPatientProfileForm.PhoneNumbertxt.$invalid">
+                                       <span ng-show="viewPatientProfileForm.PhoneNumbertxt.$error.required" class="text-danger">Phone Number must and should</span>
+                                </span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Patient's First Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="first-name" required="required" name="firstnametxt" class="form-control col-md-7 col-xs-12" ng-model="patient.firstName" ng-readonly="firstNameTF" style="background-color:#EEF9FF;">
+                                <span ng-show="viewPatientProfileForm.firstnametxt.$dirty && viewPatientProfileForm.firstnametxt.$invalid">
+                                        <span ng-show="viewPatientProfileForm.firstnametxt.$error.required" class="text-danger">First Name is Required</span>
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Patient's Last Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input type="text" id="last-name"  name="lastnametxt" required="required" class="form-control col-md-7 col-xs-12" ng-model="patient.lastName" ng-readonly="lastNameTF" style="background-color:#EEF9FF;">
+                             <span ng-show="viewPatientProfileForm.lastnametxt.$dirty && viewPatientProfileForm.lastnametxt.$invalid">
+                                        <span ng-show="viewPatientProfileForm.lastnametxt.$error.required" class="text-danger">Last Name is Required</span>
+                                    </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Email Id</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id="middle-name"  class="form-control col-md-7 col-xs-12"  overwrite-email name="emailtxt" type="text"  ng-model="patient.emailId" ng-readonly="emailIdTF" required style="background-color:#EEF9FF;">
+                               <span ng-show="viewPatientProfileForm.emailtxt.$dirty && viewPatientProfileForm.emailtxt.$invalid">
+                                        <span ng-show="viewPatientProfileForm.emailtxt.$error.required" class="text-danger">Email Id is Required</span>
+                                <span ng-show="viewPatientProfileForm.emailtxt.$error.email">Email format is invalid</span>
+                               </span>
+                        </div>
+                    </div>
+                    <!-- <div class="form-group"> -->
+                    <!-- <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label> -->
+                    <!-- <div class="col-md-6 col-sm-6 col-xs-12"> -->
+                    <!-- <div id="gender" class="btn-group" data-toggle="buttons"> -->
+                    <!-- <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"> -->
+                    <!-- <input type="radio" name="gender" value="male"> &nbsp; Male &nbsp; -->
+                    <!-- </label> -->
+                    <!-- <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default"> -->
+                    <!-- <input type="radio" name="gender" value="female"> Female -->
+                    <!-- </label> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
+
+
+                    <!-- <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                       </div>
+                     </div>
+
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Patient ccandidate 1 <span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                       </div>
+                     </div>
+
+                     <div class="form-group">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Patient ccandidate 2<span class="required">*</span>
+                       </label>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                       </div>
+                     </div>-->
+                    <!--
+                                            <div class="form-group" ng-repeat="elemnt in questionelemnt">
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Care taker phone number<span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                                    <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" ng-model="elemnt.number" required="required" type="number">
+                                                </div>
+                                            </div>-->
+
+                    <!-- <div ng-repeat="elemnt in questionelemnt">
+
+                         <input type="tel" ng-model="elemnt.number">
+                     </div>-->
+
+                   <!-- <div class="ln_solid"></div>
+                    <div class="form-group" align="center" >
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            &lt;!&ndash;<button class="btn btn-primary" type="button">Cancel</button>&ndash;&gt;
+                            &lt;!&ndash;<button class="btn btn-primary" ng-click="addFormField($event)" type="button">Cancel</button>&ndash;&gt;
+                            <input type="submit" value="Update" ng-click="updateCall(patient)" class="btn btn-success add">
+                        </div>
+                    </div>
+-->
+
+                  <!-- <span class="text text-primary">{{updatesucc}}</span>    {{updateError}}-->
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

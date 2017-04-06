@@ -1,0 +1,88 @@
+
+
+
+<div class="" role="main">
+    <div class="">
+        <div class="page-title">
+       <h2 style="color:#1B3A8D;">Add Family Member</h2>
+
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel" style="background-color:white;">
+                    <div class="x_title">
+                        
+                        <ul class="nav navbar-right panel_toolbox">
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+
+						<h5 style="color:#1B3991;">Select Patient</h5>
+                            <div style="padding-top:5%;">
+					  </div >
+					  
+					 <div style="width:100%;">
+					    <select class="selectpicker"  ng-model="patient.userId" style="width:110%;height:33px; background-color:#EEF9FF;" >
+                            <option value="" selected>-- Select Patient --</option>
+                            <option data-tokens="ketchup mustard" ng-repeat="prf in GetPatientsProfiles" value="{{prf.userId}}">{{prf.firstName}}</option>
+
+                        </select>
+
+
+					 </div>
+
+
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+
+
+
+                            
+							<div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                <h5 align="center" style="color:#1B3991;">Add Family Member Phone Number</h5>
+								<div class="x_content" >
+
+                                    <div style="padding-top:0.8%;"></div>
+									 
+                                    <form id="demo-form2" name="addCareForm" data-parsley-validate class="form-horizontal form-label-left" >
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><span class="required"></span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+											
+                                                <input type="text" id="first-name" required="required" name="caretakerphNumbertxt" class="form-control col-md-7 col-xs-12" ng-model="patient.phoneNumber" phone-input  numbers-only ng-readonly="phoneNumberTF" placeholder="Enter phone number" style=" background-color:#EEF9FF;border-radius:0px;">
+												
+                                    <span ng-show="addCareForm.caretakerphNumbertxt.$dirty && addCareForm.caretakerphNumbertxt.$invalid">
+                                        <span ng-show="addCareForm.caretakerphNumbertxt.$error.required" class="text-danger">Care taker phone Required</span>
+                                    </span>
+                                            </div>
+                                        </div>
+
+                                        
+                                        <div class="form-group" align="center"  style="padding-right:70%;paading-top:5%;" >
+                                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3" align="center">
+
+                                                <input type="submit" value="Add" ng-click="addCareTakerCall(patient)" class="btn btn-success add">
+                                            </div>
+                                        </div>
+
+                                        <span class="text text-primary">{{careTakesucc}}</span>    {{careTakeError}}
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.padding{
+	padding-top:10%;
+}
+.add{
+	 background: #149B7E; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #149B7E , #61BBA8); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #149B7E, #61BBA8); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #149B7E, #61BBA8); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #149B7E , #61BBA8); /* Standard syntax */
+	color:white;
+	border:1px solid  #149B7E;
+}
+#Edit_text{
+	color:white;
+}
+
+.add1{
+    background: #4286F4; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, #4286F4 , #84A8E1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #4286F4, #84A8E1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #4286F4, #84A8E1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #4286F4 , #84A8E1); /* Standard syntax */
+    color:white;
+    border:1px solid  #149B7E;
+}
