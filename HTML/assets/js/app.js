@@ -1,6 +1,6 @@
 
 
-var app = angular.module('MyApp', ['ui.router']);
+var app = angular.module('MyApp', ['ui.router','ui.bootstrap']);
                       debugger;
 app.config(function($stateProvider, $urlRouterProvider) {
 

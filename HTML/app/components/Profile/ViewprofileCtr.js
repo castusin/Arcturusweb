@@ -5,13 +5,47 @@
 app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewProfileServiceInfo',function ($scope,$http,$state,$rootScope,ViewProfileServiceInfo){
 
     debugger;
-    
+    $scope.currentPage = 1;
+    $scope.numPerPage = 6;
+    $scope.maxSize = 5;
+
+
+
+
+
     ViewProfileServiceInfo.GetAllProfilesService().then(function (result) {
-debugger;
+        debugger;
         var GetResults=result.responseCode;
-        $scope.GetPatientsProfiles=result.resultObject;
+
+
+        if(result.responseCode == 0){
+
+            $scope.makeTodos = function() {
+                $scope.todos = [];
+
+                $scope.todos = result.resultObject;
+
+                var data = $.grep($scope.todos,function(td){}).parktype;
+            };
+            $scope.makeTodos();
+
+            $scope.$watch('currentPage + numPerPage', function() {
+                var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+                    , end = begin + $scope.numPerPage;
+
+                $scope.GetPatientsProfiles = $scope.todos.slice(begin, end);
+            });
+            /* $scope.GetPatientsProfiles=result.resultObject;*/
+
+        }
+        else{
+
+        }
+
+
+
     },function (error) {
-        
+
     })
 
 
