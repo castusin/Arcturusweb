@@ -22,10 +22,10 @@
   background: -o-linear-gradient(right, #F3A647, ##f8c98f); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #F3A647, ##f8c98f); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #F3A647 , ##f8c98f); /* Standard syntax */
-	color:white;
+	color:#333333;
 	border:1px solid  #F3A647;
-    font-size:16px;
-   
+    font-size:13px;
+   font-weight:bold;
     
     border-radius: 5px;
 }
@@ -68,4 +68,16 @@
     column-break-inside: avoid;
     opacity: 1;
     transition: all .2s ease;
+}
+/* .btn-success { */
+    /* color: #fff !important; */
+    /* background-color: #1a3a8d !important; */
+    /* border-color: #4cae4c !important; */
+/* } */
+
+
+.btn-primary:hover {
+    color: #fff !important;
+    background-color: #f3a647 !important;
+    border-color: #f3a647 !important;
 }

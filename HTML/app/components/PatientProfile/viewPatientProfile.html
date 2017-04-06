@@ -120,7 +120,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input type="text" id="first-name" required="required" name="PhoneNumbertxt" class="form-control col-md-7 col-xs-12" ng-model="patient.phoneNumber" numbers-only ng-readonly="phoneNumberTF" style="background-color:#EEF9FF;">
                                 <span ng-show="viewPatientProfileForm.PhoneNumbertxt.$dirty && viewPatientProfileForm.PhoneNumbertxt.$invalid">
-                                       <span ng-show="viewPatientProfileForm.PhoneNumbertxt.$error.required" class="text-danger">Phone Number must and should</span>
+                                       <span ng-show="viewPatientProfileForm.PhoneNumbertxt.$error.required" class="text-danger">Phone number required</span>
                                 </span>
                         </div>
                     </div>
@@ -133,7 +133,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input type="text" id="first-name" required="required" name="firstnametxt" class="form-control col-md-7 col-xs-12" ng-model="patient.firstName" ng-readonly="firstNameTF" style="background-color:#EEF9FF;">
                                 <span ng-show="viewPatientProfileForm.firstnametxt.$dirty && viewPatientProfileForm.firstnametxt.$invalid">
-                                        <span ng-show="viewPatientProfileForm.firstnametxt.$error.required" class="text-danger">First Name is Required</span>
+                                        <span ng-show="viewPatientProfileForm.firstnametxt.$error.required" class="text-danger">First name is required</span>
                                     </span>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input type="text" id="last-name"  name="lastnametxt" required="required" class="form-control col-md-7 col-xs-12" ng-model="patient.lastName" ng-readonly="lastNameTF" style="background-color:#EEF9FF;">
                              <span ng-show="viewPatientProfileForm.lastnametxt.$dirty && viewPatientProfileForm.lastnametxt.$invalid">
-                                        <span ng-show="viewPatientProfileForm.lastnametxt.$error.required" class="text-danger">Last Name is Required</span>
+                                        <span ng-show="viewPatientProfileForm.lastnametxt.$error.required" class="text-danger">Last name is required</span>
                                     </span>
                         </div>
                     </div>
@@ -152,7 +152,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                             <input id="middle-name"  class="form-control col-md-7 col-xs-12"  overwrite-email name="emailtxt" type="text"  ng-model="patient.emailId" ng-readonly="emailIdTF" required style="background-color:#EEF9FF;">
                                <span ng-show="viewPatientProfileForm.emailtxt.$dirty && viewPatientProfileForm.emailtxt.$invalid">
-                                        <span ng-show="viewPatientProfileForm.emailtxt.$error.required" class="text-danger">Email Id is Required</span>
+                                        <span ng-show="viewPatientProfileForm.emailtxt.$error.required" class="text-danger">Email id is required</span>
                                 <span ng-show="viewPatientProfileForm.emailtxt.$error.email">Email format is invalid</span>
                                </span>
                         </div>
