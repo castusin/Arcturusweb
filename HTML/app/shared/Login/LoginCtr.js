@@ -6,7 +6,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-app.controller('LoginCtr',['$scope','$http','$window',function ($scope,$http,$window) {
+app.controller('LoginCtr',['$scope','$http','$window','$mdToast',function ($scope,$http,$window,$mdToast) {
     debugger;
 
     $scope.LoginModel={
@@ -22,7 +22,14 @@ app.controller('LoginCtr',['$scope','$http','$window',function ($scope,$http,$wi
         }
         else
         {
-            alert("Invalid UserId and Password");
+            $mdToast.show(
+                $mdToast.simple()
+                    .textContent('Invalid UserId and Password')
+                    .position('top')
+                    .theme('error-toast')
+                    .hideDelay(3000)
+            );
+            /*alert("Invalid UserId and Password");*/
         }
 
 

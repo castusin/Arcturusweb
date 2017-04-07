@@ -1,5 +1,5 @@
 
-app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo','$window',function ($scope,$http,$state,patientServiceInfo,$window) {
+app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo','$window','$mdToast',function ($scope,$http,$state,patientServiceInfo,$window,$mdToast) {
 
        debugger;
     $scope.questionelemnt = [{
@@ -64,7 +64,7 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
 
 
 
-
+            $scope.loading = true;
         patientServiceInfo.AddPatientService($scope.careTakerModel).then(function(GetRsltInfo){
             debugger;
             var GetRstval = GetRsltInfo;
@@ -73,15 +73,32 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
             
             if(GetRsltInfo.responseCode == 0){
                /* $window.location.reload();*/
-
+                $scope.loading = false;
                 /*$scope.addpatient="Patient added successfully" ;*/
                 $state.go($state.current, {}, {reload: true});
-               alert("Patient added successfully");
+              /* alert("Patient added successfully");*/
+
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Patient added successfully')
+                        .position('top')
+                        .theme('success-toast')
+                        .hideDelay(3000)
+                );
+
             }
             else{
+                $scope.loading = false;
                 $state.go($state.current, {}, {reload: true});
-               alert( "Failed At DataAccess");
+               /*alert( "Failed At DataAccess");*/
                 /*$scope.addpatent="Sorry" ;*/
+                $mdToast.show(
+                    $mdToast.simple()
+                        .textContent('Failed At DataAccess')
+                        .position('top')
+                        .theme('error-toast')
+                        .hideDelay(3000)
+                );
             }
 
         }).error(function(){});

@@ -5,6 +5,9 @@
 app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewProfileServiceInfo',function ($scope,$http,$state,$rootScope,ViewProfileServiceInfo){
 
     debugger;
+
+    $scope.loading = true;
+
     $scope.currentPage = 1;
     $scope.numPerPage = 6;
     $scope.maxSize = 5;
@@ -36,10 +39,10 @@ app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewPro
                 $scope.GetPatientsProfiles = $scope.todos.slice(begin, end);
             });
             /* $scope.GetPatientsProfiles=result.resultObject;*/
-
+            $scope.loading = false;
         }
         else{
-
+            $scope.loading = false;
         }
 
 

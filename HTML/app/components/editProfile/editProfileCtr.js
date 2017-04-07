@@ -1,5 +1,5 @@
 
-app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileService',function ($scope,$http,$rootScope,GetProfileService) {
+app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileService','$mdToast',function ($scope,$http,$rootScope,GetProfileService,$mdToast) {
 
     debugger;
     $scope.patient={
@@ -44,7 +44,7 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
             update.photo  ="";
             update.dob  ="";
             /*update.sessionId="7ca17e22-85f3-45c7-9b9e-f1ced9561954";*/
-
+            $scope.loading = true;
             GetProfileService.UpdateProfileService(update).then(function(updateInfo){
                 debugger;
                 var GetRstval = updateInfo;
@@ -52,13 +52,28 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
                 var Rstval = updateInfo.resultObject;
 
                 if(updateInfo.responseCode == 0){
-
-                    alert("Updated successfully");
+                    $scope.loading = false;
+                   /* alert("Updated successfully");*/
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Updated successfully')
+                            .position('top')
+                            .theme('success-toast')
+                            .hideDelay(3000)
+                    );
 
                 }
 
                 else{
-                   alert( "Update failed");
+                    $scope.loading = false;
+                /*   alert( "Update failed");*/
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .textContent('Update failed')
+                            .position('top')
+                            .theme('error-toast')
+                            .hideDelay(3000)
+                    );
 
                 }
 
