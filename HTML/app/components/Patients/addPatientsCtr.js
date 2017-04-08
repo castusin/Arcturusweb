@@ -66,6 +66,8 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
 
             $scope.progressbar = ngProgressFactory.createInstance();
             $scope.progressbar.start();
+			 $scope.progressbar.setColor('#FFA500');
+		$scope.progressbar.setHeight('4px');
 
            /* $scope.loading = true;*/
         patientServiceInfo.AddPatientService($scope.careTakerModel).then(function(GetRsltInfo){

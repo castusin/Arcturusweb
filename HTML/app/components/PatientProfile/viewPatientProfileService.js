@@ -1,7 +1,7 @@
 
 
     app.factory('GetProfileService',function ($http) {
-        var webServiceUrl   = "http://digitest.castusinfo.com/";
+        var webServiceUrl   = "http://digihealthcare.castusinfo.com/";
         var config = {
             headers: {'Content-Type': 'application/json; charset=utf-8', 'Authorization': 'homecare1@3'}
         };

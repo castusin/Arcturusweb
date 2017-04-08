@@ -21,6 +21,8 @@ app.controller('careTakerCtr',['$scope','$http','$rootScope','$state','ViewProfi
         /*$scope.loading = true;*/
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
+		 $scope.progressbar.setColor('#FFA500');
+		$scope.progressbar.setHeight('4px');
         careTakerServiceInfo.CareTakerService(patient).then(function(result){
             debugger;
             /*var GetRstval = careTakeInfo;*/

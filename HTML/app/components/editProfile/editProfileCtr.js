@@ -48,6 +48,8 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
            /* $scope.loading = true;*/
             $scope.progressbar = ngProgressFactory.createInstance();
             $scope.progressbar.start();
+			 $scope.progressbar.setColor('#FFA500');
+		$scope.progressbar.setHeight('4px');
 
             GetProfileService.UpdateProfileService(update).then(function(updateInfo){
                 debugger;
