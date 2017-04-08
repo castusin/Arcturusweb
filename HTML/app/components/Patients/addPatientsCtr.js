@@ -1,5 +1,6 @@
 
-app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo','$window','$mdToast',function ($scope,$http,$state,patientServiceInfo,$window,$mdToast) {
+app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo','$window','$mdToast','ngProgressFactory','$timeout',
+                          function ($scope,$http,$state,patientServiceInfo,$window,$mdToast,ngProgressFactory,$timeout) {
 
        debugger;
     $scope.questionelemnt = [{
@@ -63,8 +64,10 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
         });
 
 
+            $scope.progressbar = ngProgressFactory.createInstance();
+            $scope.progressbar.start();
 
-            $scope.loading = true;
+           /* $scope.loading = true;*/
         patientServiceInfo.AddPatientService($scope.careTakerModel).then(function(GetRsltInfo){
             debugger;
             var GetRstval = GetRsltInfo;
@@ -72,8 +75,8 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
             var Rstval = GetRsltInfo.resultObject;
             
             if(GetRsltInfo.responseCode == 0){
-               /* $window.location.reload();*/
-                $scope.loading = false;
+                $timeout($scope.progressbar.complete(), 1000);
+               /* $scope.loading = false;*/
                 /*$scope.addpatient="Patient added successfully" ;*/
                 $state.go($state.current, {}, {reload: true});
               /* alert("Patient added successfully");*/
@@ -81,21 +84,22 @@ app.controller('addPatientsCtr',['$scope','$http','$state','patientServiceInfo',
                 $mdToast.show(
                     $mdToast.simple()
                         .textContent('Patient added successfully')
-                        .position('top')
+                        .position('center')
                         .theme('success-toast')
                         .hideDelay(3000)
                 );
 
             }
             else{
-                $scope.loading = false;
+                $timeout($scope.progressbar.complete(), 1000);
+                /*$scope.loading = false;*/
                 $state.go($state.current, {}, {reload: true});
                /*alert( "Failed At DataAccess");*/
                 /*$scope.addpatent="Sorry" ;*/
                 $mdToast.show(
                     $mdToast.simple()
-                        .textContent('Failed At DataAccess')
-                        .position('top')
+                        .textContent('Account already exists')
+                        .position('bottom')
                         .theme('error-toast')
                         .hideDelay(3000)
                 );

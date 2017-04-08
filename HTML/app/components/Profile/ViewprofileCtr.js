@@ -2,11 +2,15 @@
  * Created by Darshan on 3/20/2017.
  */
 
-app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewProfileServiceInfo',function ($scope,$http,$state,$rootScope,ViewProfileServiceInfo){
+app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewProfileServiceInfo','ngProgressFactory','$timeout',
+                        function ($scope,$http,$state,$rootScope,ViewProfileServiceInfo,ngProgressFactory,$timeout){
 
     debugger;
 
-    $scope.loading = true;
+  /*  $scope.loading = true;*/
+    $scope.progressbar = ngProgressFactory.createInstance();
+    $scope.progressbar.start();
+
 
     $scope.currentPage = 1;
     $scope.numPerPage = 6;
@@ -22,6 +26,7 @@ app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewPro
 
 
         if(result.responseCode == 0){
+            $timeout($scope.progressbar.complete(), 1000);
 
             $scope.makeTodos = function() {
                 $scope.todos = [];
@@ -39,10 +44,11 @@ app.controller('viewProfileCtr',['$scope','$http','$state','$rootScope','ViewPro
                 $scope.GetPatientsProfiles = $scope.todos.slice(begin, end);
             });
             /* $scope.GetPatientsProfiles=result.resultObject;*/
-            $scope.loading = false;
+           /* $scope.loading = false;*/
         }
         else{
-            $scope.loading = false;
+            $timeout($scope.progressbar.complete(), 1000);
+           /* $scope.loading = false;*/
         }
 
 

@@ -1,5 +1,6 @@
 
-app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileService','$mdToast',function ($scope,$http,$rootScope,GetProfileService,$mdToast) {
+app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileService','$mdToast','ngProgressFactory','$timeout',
+                         function ($scope,$http,$rootScope,GetProfileService,$mdToast,ngProgressFactory,$timeout) {
 
     debugger;
     $scope.patient={
@@ -44,7 +45,10 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
             update.photo  ="";
             update.dob  ="";
             /*update.sessionId="7ca17e22-85f3-45c7-9b9e-f1ced9561954";*/
-            $scope.loading = true;
+           /* $scope.loading = true;*/
+            $scope.progressbar = ngProgressFactory.createInstance();
+            $scope.progressbar.start();
+
             GetProfileService.UpdateProfileService(update).then(function(updateInfo){
                 debugger;
                 var GetRstval = updateInfo;
@@ -52,12 +56,13 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
                 var Rstval = updateInfo.resultObject;
 
                 if(updateInfo.responseCode == 0){
-                    $scope.loading = false;
+                    $timeout($scope.progressbar.complete(), 1000);
+                   /* $scope.loading = false;*/
                    /* alert("Updated successfully");*/
                     $mdToast.show(
                         $mdToast.simple()
                             .textContent('Updated successfully')
-                            .position('top')
+                            .position('bottom')
                             .theme('success-toast')
                             .hideDelay(3000)
                     );
@@ -65,12 +70,13 @@ app.controller('EditProfileCtr',['$scope','$http','$rootScope','GetProfileServic
                 }
 
                 else{
-                    $scope.loading = false;
+                    $timeout($scope.progressbar.complete(), 1000);
+                   /* $scope.loading = false;*/
                 /*   alert( "Update failed");*/
                     $mdToast.show(
                         $mdToast.simple()
                             .textContent('Update failed')
-                            .position('top')
+                            .position('bottom')
                             .theme('error-toast')
                             .hideDelay(3000)
                     );
