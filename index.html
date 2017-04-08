@@ -63,7 +63,8 @@ height:auto;
       <div class="login_wrapper" style="margin-top:15%;">
         <div class="animate form login_form" style="border-radius:10px;">
           <section class="login_content">
-            <form style="width:100%;padding-left:15%;padding-right:15%;" >
+
+            <form style="width:100%;padding-left:15%;padding-right:15%;" ng-submit="SubmitLogin(LoginModel)">
               <h1 style="color:white;">Login Form</h1>
 			   
 			   
@@ -74,7 +75,7 @@ height:auto;
                 <input type="password" class="form-control" ng-model='LoginModel.Password' placeholder="Password" required="" />
               </div>
                <div>
-                <a class="btn btn-default submit" ng-click="SubmitLogin(LoginModel)">Log in</a>
+                <button class="btn btn-default submit" type="submit" ng-keyup="$event.keyCode == 13 && SubmitLogin(LoginModel)">Log in</button>
                  <!-- <a class="reset_pass" href="#">Lost your password?</a>  -->
                </div> 
 
