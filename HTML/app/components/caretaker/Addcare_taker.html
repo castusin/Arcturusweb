@@ -65,7 +65,7 @@
 											<P align="center" style="color:#1B3991;padding-right:30%;font-weight:bold;">Enter Family Member Phone Number</P>
                                             <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:19.5%;">
 											
-                                                <input type="text" id="first-name" required="required" name="caretakerphNumbertxt" class="form-control col-md-7 col-xs-12" ng-model="patient.phoneNumber" phone-input  numbers-only ng-readonly="phoneNumberTF" placeholder="Enter phone number" style=" background-color:#EEF9FF;border-radius:0px;width:77%;">
+                                                <input type="text" id="first-name"  name="caretakerphNumbertxt" class="form-control col-md-7 col-xs-12" ng-model="patient.phoneNumber" phone-input  numbers-only ng-readonly="phoneNumberTF" placeholder="Enter phone number" style=" background-color:#EEF9FF;border-radius:0px;width:77%;" required>
 												
                                     <span ng-show="addCareForm.caretakerphNumbertxt.$dirty && addCareForm.caretakerphNumbertxt.$invalid">
                                         <span ng-show="addCareForm.caretakerphNumbertxt.$error.required" class="text-danger">Care taker phone number required</span>

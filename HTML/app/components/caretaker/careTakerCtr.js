@@ -18,6 +18,8 @@ app.controller('careTakerCtr',['$scope','$http','$rootScope','$state','ViewProfi
     $scope.addCareTakerCall=function(patient){
 
         debugger;
+
+        if($scope.addCareForm.$valid) {
         /*$scope.loading = true;*/
         $scope.progressbar = ngProgressFactory.createInstance();
         $scope.progressbar.start();
@@ -67,7 +69,7 @@ app.controller('careTakerCtr',['$scope','$http','$rootScope','$state','ViewProfi
         });
     }
 
-
+    }
 
 }]);
 
